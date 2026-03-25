@@ -417,9 +417,9 @@
         }
         .about-grid {
             display: grid;
-            grid-template-columns: 1fr 1.2fr;
-            gap: clamp(40px, 6vw, 100px);
-            align-items: start;
+            grid-template-columns: 0.85fr 1fr;
+            gap: clamp(48px, 7vw, 120px);
+            align-items: center;
         }
         .about-image-wrap {
             position: relative;
@@ -517,7 +517,7 @@
 
         /* ── Conference Image Strip ── */
         .conf-strip {
-            padding: clamp(40px, 6vw, 80px) 0;
+            padding: clamp(40px, 6vw, 100px) 0;
             background: var(--off-white);
             overflow: hidden;
         }
@@ -527,8 +527,8 @@
             gap: clamp(40px, 6vw, 100px);
         }
         .conf-strip-image {
-            flex: 0 0 45%;
-            max-width: 550px;
+            flex: 0 0 42%;
+            max-width: 520px;
             overflow: hidden;
         }
         .conf-strip-image img {
@@ -543,17 +543,17 @@
         }
         .conf-strip-text blockquote {
             font-family: var(--serif);
-            font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+            font-size: clamp(1.3rem, 3vw, 2.4rem);
             font-weight: 300;
             font-style: italic;
             color: var(--charcoal);
-            line-height: 1.5;
+            line-height: 1.45;
         }
         .conf-strip-text .attribution {
-            margin-top: 1.5rem;
+            margin-top: 2rem;
             font-family: var(--sans);
-            font-size: 0.75rem;
-            letter-spacing: 0.15em;
+            font-size: 0.78rem;
+            letter-spacing: 0.2em;
             text-transform: uppercase;
             color: var(--sage);
         }
@@ -902,7 +902,7 @@
         .reviews-track {
             display: flex;
             gap: 20px;
-            animation: scrollReviews 50s linear infinite;
+            animation: scrollReviews 90s linear infinite;
             width: max-content;
         }
         .reviews-track:hover { animation-play-state: paused; }
@@ -1142,19 +1142,27 @@
             .nav-links { display: none; }
             .nav-toggle { display: block; }
 
-            .hero-content { justify-content: center; padding-top: 120px; }
+            .hero { min-height: 100svh; }
+            .hero-content { justify-content: flex-end; align-items: flex-end; padding: 0 24px 60px; }
             .hero-text { margin-right: 0; text-align: center; max-width: 100%; }
+            .hero-eyebrow { font-size: 0.58rem; margin-bottom: 1rem; letter-spacing: 0.25em; }
+            .hero-heading { font-size: 1.7rem; margin-bottom: 1rem; }
+            .hero-sub { font-size: 0.82rem; line-height: 1.7; margin-bottom: 1.8rem; }
             .hero-actions { justify-content: center; }
+            .btn-primary, .btn-ghost { font-size: 0.65rem; padding: 13px 24px; }
             .hero-bg::after {
                 background: linear-gradient(
                     to bottom,
-                    rgba(44, 47, 47, 0.3) 0%,
-                    rgba(44, 47, 47, 0.7) 40%,
-                    rgba(44, 47, 47, 0.9) 70%,
-                    rgba(44, 47, 47, 0.95) 100%
+                    rgba(44, 47, 47, 0.05) 0%,
+                    rgba(44, 47, 47, 0.15) 25%,
+                    rgba(44, 47, 47, 0.55) 50%,
+                    rgba(44, 47, 47, 0.85) 65%,
+                    rgba(44, 47, 47, 0.95) 80%,
+                    rgba(44, 47, 47, 0.98) 100%
                 );
             }
-            .hero-bg img { object-position: 30% center; }
+            .hero-bg img { object-position: 30% top; }
+            .hero-scroll-indicator { display: none; }
 
             .about-grid { grid-template-columns: 1fr; }
             .about-image-wrap { max-width: 400px; }
@@ -1176,7 +1184,8 @@
 
         @media (max-width: 480px) {
             .gallery-grid { grid-template-columns: 1fr; }
-            .hero-heading { font-size: 2rem; }
+            .hero-heading { font-size: 1.5rem; }
+            .hero-sub { font-size: 0.78rem; }
             .about-credentials { flex-direction: column; gap: 1rem; }
         }
 
@@ -1386,38 +1395,6 @@
     </div>
 </section>
 
-<!-- Journey -->
-<section class="journey" id="journey">
-    <div class="container">
-        <div class="journey-header">
-            <p class="section-label reveal">Η Πορεία</p>
-            <h2 class="section-title reveal reveal-delay-1">Η Πορεία Μαζί Μας</h2>
-            <p class="reveal reveal-delay-2">Μια δομημένη αλλά ευέλικτη διαδρομή προς την εσωτερική σας ολοκλήρωση.</p>
-        </div>
-        <div class="journey-steps">
-            <div class="journey-step reveal">
-                <div class="step-dot">1</div>
-                <h4>Επικοινωνία</h4>
-                <p>Η πρώτη σας κίνηση φροντίδας. Κλείνουμε τη μέρα και ώρα που σας εξυπηρετεί.</p>
-            </div>
-            <div class="journey-step reveal reveal-delay-1">
-                <div class="step-dot">2</div>
-                <h4>Πρώτη Αξιολόγηση</h4>
-                <p>Γνωριμία σε ασφαλές περιβάλλον. Ακούμε τις ανάγκες σας χωρίς κριτική.</p>
-            </div>
-            <div class="journey-step reveal reveal-delay-2">
-                <div class="step-dot">3</div>
-                <h4>Θεραπευτικό Πλάνο</h4>
-                <p>Σχεδιάζουμε την προσέγγιση που ταιριάζει αποκλειστικά στη δική σας ιδιοσυγκρασία.</p>
-            </div>
-            <div class="journey-step reveal reveal-delay-3">
-                <div class="step-dot">4</div>
-                <h4>Ανάπτυξη</h4>
-                <p>Σταθερά βήματα προς την αυτογνωσία, την ανθεκτικότητα και τη σύνθεση του εαυτού.</p>
-            </div>
-        </div>
-    </div>
-</section>
 
 <!-- Space / Gallery -->
 <section class="space" id="space">
